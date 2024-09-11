@@ -7,7 +7,7 @@ const Title = () => {
     return (
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography variant="h4" sx={{ color: "secondary.main" }}>
-                Wether App
+                Weather App
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center" }}>
                 <MaterialUISwitch />
