@@ -11,8 +11,9 @@ const ExtendedForecast = () => {
                 bgcolor: "primary.main",
                 p: 4,
                 mt: 4,
-                borderRadius: 3,
+                borderRadius: 3
             }}
+            
         >
             <Typography variant="h4" color="secondary">
                 extended forecast

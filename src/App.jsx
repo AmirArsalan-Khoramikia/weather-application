@@ -1,10 +1,13 @@
-import { Box, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { ThemeProvider } from "@mui/material";
+import { lightTheme, darkTheme } from "./theme/theme.js";
+
+import { Box } from "@mui/material";
 
 import Title from "./components/ui/Title.jsx";
 import Search from "./components/ui/Search.jsx";
 import CurrentWeather from "./components/ui/CurrentWeather.jsx";
 import ExtendedForecast from "./components/ui/ExtendedForecast.jsx";
-
 
 import { useEffect } from "react";
 import axios from "axios";
@@ -28,15 +31,42 @@ function App() {
     //     }
     // };
 
+    // --------------------THEME----------------------
+    const [mode, setMode] = useState("dark");
+    const handelChangeTheme = () => {
+        setMode(mode === "dark" ? "light" : "dark");
+    };
+    const theme = mode === "dark" ? darkTheme : lightTheme;
+    // -----------------------------------------------
+
     return (
-        <Box sx={{ width: "100vw", height: "100vh", bgcolor: "primary.dark" }}>
-            <Box sx={{ width: "60vw", m: "0 auto" }}>
-                <Title />
-                <Search />
-                <CurrentWeather />
-                <ExtendedForecast/>
+        <ThemeProvider theme={theme}>
+            <Box
+                sx={{
+                    width: "100vw",
+                    height: "100vh",
+                    bgcolor: "primary.dark",
+                }}
+            >
+                <Box
+                    sx={{
+                        width: "50vw",
+                        m: "0 auto",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        height: "100vh",
+                    }}
+                >
+                    <Box>
+                        <Title handelChangeTheme={handelChangeTheme} />
+                        <Search />
+                        <CurrentWeather />
+                        <ExtendedForecast />
+                    </Box>
+                </Box>
             </Box>
-        </Box>
+        </ThemeProvider>
     );
 }
 
