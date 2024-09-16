@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import { weatherContext } from "../../App";
 
 const Title = (handelChangeTheme) => {
+
+    const {setWeather} = useContext(weatherContext)
+
     return (
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography variant="h4" sx={{ color: "secondary.main" }}>
-                Weather App
+                //TODO show data
+                Weather App{console.log(setWeather)}
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center" }}>
                 <FormControlLabel

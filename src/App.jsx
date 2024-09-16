@@ -1,35 +1,42 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import { ThemeProvider } from "@mui/material";
 import { lightTheme, darkTheme } from "./theme/theme.js";
 
 import { Box } from "@mui/material";
 
 import Title from "./components/ui/Title.jsx";
-import Search from "./components/ui/Search.jsx";
 import CurrentWeather from "./components/ui/CurrentWeather.jsx";
+import Search from "./components/ui/Search.jsx";
 import ExtendedForecast from "./components/ui/ExtendedForecast.jsx";
 
 import { useEffect } from "react";
 import axios from "axios";
 
-function App() {
-    // useEffect(() => {
-    //     getWeather();
-    // }, []);
+// --------------------CONTEXT----------------------
+//TODO send data
+export const weatherContext = createContext(null);
+const [setWeather , setSetWeather] = useState()
+// -----------------------------------------------
 
-    // const getWeather = async () => {
-    //     try {
-    //         const response = await axios.get(
-    //             "https://api.openweathermap.org/data/2.5/weather?q=Mashhad&appid=bfbd00855c827575966350bb7777edc6"
-    //         );
-    //         console.log(response.data);
-    //     } catch (error) {
-    //         console.error(
-    //             "Error fetching weather data:",
-    //             error.response ? error.response.data : error.message
-    //         );
-    //     }
-    // };
+function App() {
+    // --------------------GETWEATHER----------------------
+    useEffect(() => {
+        getWeather();
+    }, []);
+    const getWeather = async () => {
+        try {
+            const response = await axios.get(
+                "http://api.weatherapi.com/v1/forecast.json?key=746cacc8eef5448c9bc124132240909&q=mashhad&days=7&aqi=no&alerts=no"
+            );
+            setSetWeather(response.data);
+        } catch (error) {
+            console.error(
+                "Error fetching weather data:",
+                error.response ? error.response.data : error.message
+            );
+        }
+    };
+    // -----------------------------------------------
 
     // --------------------THEME----------------------
     const [mode, setMode] = useState("dark");
@@ -59,10 +66,12 @@ function App() {
                     }}
                 >
                     <Box>
-                        <Title handelChangeTheme={handelChangeTheme} />
-                        <Search />
-                        <CurrentWeather />
-                        <ExtendedForecast />
+                        <weatherContext.Provider value={{setWeather,setSetWeather}}>
+                            <Title handelChangeTheme={handelChangeTheme} />
+                            <Search />
+                            <CurrentWeather />
+                            <ExtendedForecast />
+                        </weatherContext.Provider>
                     </Box>
                 </Box>
             </Box>
