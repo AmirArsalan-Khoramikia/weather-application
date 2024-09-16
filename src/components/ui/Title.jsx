@@ -7,15 +7,30 @@ import Switch from "@mui/material/Switch";
 import { weatherContext } from "../../App";
 
 const Title = (handelChangeTheme) => {
+    const { setWeather } = useContext(weatherContext);
 
-    const {setWeather} = useContext(weatherContext)
+    // const time = () => {
+    //     setInterval(() => {
+    //         return setWeather.location.localtime;
+    //     }, 1000);
+    // };
 
     return (
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box
+            sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+            }}
+        >
             <Typography variant="h4" sx={{ color: "secondary.main" }}>
-                //TODO show data
-                Weather App{console.log(setWeather)}
+                Weather App
             </Typography>
+
+            {/* <Typography variant="p" color="secondary">
+                {time}
+            </Typography> */}
+
             <Box sx={{ display: "flex", alignItems: "center" }}>
                 <FormControlLabel
                     onChange={handelChangeTheme.handelChangeTheme}

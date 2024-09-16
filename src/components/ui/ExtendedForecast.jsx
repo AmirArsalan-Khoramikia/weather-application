@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Box, Typography } from "@mui/material";
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import { weatherContext } from "../../App";
 
 
 const ExtendedForecast = () => {
+
+    const {setWeather} = useContext(weatherContext)
+
+
     return (
         <Box
-            sx={{
-                bgcolor: "primary.main",
-                p: 4,
-                mt: 4,
-                borderRadius: 3
-            }}
-            
+        sx={{
+            bgcolor: "primary.main",
+            p: 4,
+            mt: 4,
+            borderRadius: 3
+        }}
+        
         >
+            {console.log(setWeather)}
             <Typography variant="h4" color="secondary">
                 extended forecast
             </Typography>

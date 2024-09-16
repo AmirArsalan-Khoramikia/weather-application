@@ -13,16 +13,19 @@ import { useEffect } from "react";
 import axios from "axios";
 
 // --------------------CONTEXT----------------------
-//TODO send data
 export const weatherContext = createContext(null);
-const [setWeather , setSetWeather] = useState()
 // -----------------------------------------------
 
 function App() {
+
+    const [setWeather , setSetWeather] = useState()
+
+
     // --------------------GETWEATHER----------------------
     useEffect(() => {
         getWeather();
     }, []);
+
     const getWeather = async () => {
         try {
             const response = await axios.get(
