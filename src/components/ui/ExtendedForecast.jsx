@@ -1,264 +1,63 @@
 import React, { useContext } from "react";
 
 import { Box, Typography } from "@mui/material";
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import { weatherContext } from "../../App";
-
+import Day from "./Day";
 
 const ExtendedForecast = () => {
+    const { setWeather, loading } = useContext(weatherContext);
+    if (!loading) {
+        console.log(setWeather);
+        console.log(setWeather.forecast.forecastday);
+        // console.log(setWeather.forecast.forecastday[0]);
+        // console.log(setWeather.forecast.forecastday[0].date);
+        // console.log(setWeather.forecast.forecastday[0].day.maxtemp_c);
+        // console.log(setWeather.forecast.forecastday[0].day.mintemp_c);
+        // console.log(setWeather.forecast.forecastday[0].day.condition.text);
+        // console.log(setWeather.forecast.forecastday[0].day.condition.icon);
+    }
 
-    const {setWeather} = useContext(weatherContext)
-
-
-    return (
+    return !loading ? (
         <Box
-        sx={{
-            bgcolor: "primary.main",
-            p: 4,
-            mt: 4,
-            borderRadius: 3
-        }}
-        
-        >
-            {console.log(setWeather)}
-            <Typography variant="h4" color="secondary">
+            sx={{
+                bgcolor: "primary.main",
+                p: 4,
+                mt: 4,
+                borderRadius: 3,
+            }}>
+            <Typography variant='h4' color='secondary'>
                 extended forecast
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "space-around" }}>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        p: 2,
-                        mt: 2,
-                        gap:0.5
-                    }}
-                >
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        To Day
-                    </Typography>
-                    <WbSunnyIcon sx={{ color: "white", fontSize: 70 }} />
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        Suny
-                    </Typography>
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        24°|26°
-                    </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        p: 2,
-                        mt: 2,
-                        gap:0.5
-                    }}
-                >
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        To Day
-                    </Typography>
-                    <WbSunnyIcon sx={{ color: "white", fontSize: 70 }} />
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        Suny
-                    </Typography>
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        24°|26°
-                    </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        p: 2,
-                        mt: 2,
-                        gap:0.5
-                    }}
-                >
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        To Day
-                    </Typography>
-                    <WbSunnyIcon sx={{ color: "white", fontSize: 70 }} />
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        Suny
-                    </Typography>
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        24°|26°
-                    </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        p: 2,
-                        mt: 2,
-                        gap:0.5
-                    }}
-                >
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        To Day
-                    </Typography>
-                    <WbSunnyIcon sx={{ color: "white", fontSize: 70 }} />
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        Suny
-                    </Typography>
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        24°|26°
-                    </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        p: 2,
-                        mt: 2,
-                        gap:0.5
-                    }}
-                >
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        To Day
-                    </Typography>
-                    <WbSunnyIcon sx={{ color: "white", fontSize: 70 }} />
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        Suny
-                    </Typography>
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        24°|26°
-                    </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        p: 2,
-                        mt: 2,
-                        gap:0.5
-                    }}
-                >
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        To Day
-                    </Typography>
-                    <WbSunnyIcon sx={{ color: "white", fontSize: 70 }} />
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        Suny
-                    </Typography>
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        24°|26°
-                    </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        p: 2,
-                        mt: 2,
-                        gap:0.5
-                    }}
-                >
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        To Day
-                    </Typography>
-                    <WbSunnyIcon sx={{ color: "white", fontSize: 70 }} />
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        Suny
-                    </Typography>
-                    <Typography
-                        variant="hp"
-                        color="secondary"
-                        sx={{ fontWeight: "bold" }}
-                    >
-                        24°|26°
-                    </Typography>
-                </Box>
+                {setWeather.forecast.forecastday.map((data , index) => (
+                    <Day
+                        key={index
+
+                        }
+                        Title={data.date}
+                        WetherCondition={data.day.condition.text}
+                        MinTemp={data.day.mintemp_c}
+                        MaxTemp={data.day.maxtemp_c}
+                        WetherImage={data.day.condition.icon}
+                    />
+                ))}
             </Box>
         </Box>
+    ) : (
+        <Box>sdsf</Box>
     );
 };
 
 export default ExtendedForecast;
+
+
+
+
+
+
+//     console.log(data);
+//     console.log(data.date);
+//     console.log(data.day.maxtemp_c);
+//     console.log(data.day.mintemp_c);
+//     console.log(data.day.condition.text);
+//     console.log(data.day.condition.icon);

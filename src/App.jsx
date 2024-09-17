@@ -13,13 +13,12 @@ import { useEffect } from "react";
 import axios from "axios";
 
 // --------------------CONTEXT----------------------
-export const weatherContext = createContext(null);
+export const weatherContext = createContext();
 // -----------------------------------------------
 
 function App() {
-
-    const [setWeather , setSetWeather] = useState()
-
+    const [setWeather, setSetWeather] = useState();
+    const [loading, setLoading] = useState(true);
 
     // --------------------GETWEATHER----------------------
     useEffect(() => {
@@ -32,6 +31,7 @@ function App() {
                 "http://api.weatherapi.com/v1/forecast.json?key=746cacc8eef5448c9bc124132240909&q=mashhad&days=7&aqi=no&alerts=no"
             );
             setSetWeather(response.data);
+            setLoading(false);
         } catch (error) {
             console.error(
                 "Error fetching weather data:",
@@ -56,8 +56,7 @@ function App() {
                     width: "100vw",
                     height: "100vh",
                     bgcolor: "primary.dark",
-                }}
-            >
+                }}>
                 <Box
                     sx={{
                         width: "50vw",
@@ -66,10 +65,14 @@ function App() {
                         alignItems: "center",
                         justifyContent: "center",
                         height: "100vh",
-                    }}
-                >
+                    }}>
                     <Box>
-                        <weatherContext.Provider value={{setWeather,setSetWeather}}>
+                        <weatherContext.Provider
+                            value={{
+                                setWeather,
+                                setSetWeather,
+                                loading,
+                            }}>
                             <Title handelChangeTheme={handelChangeTheme} />
                             <Search />
                             <CurrentWeather />
