@@ -20,15 +20,15 @@ const ExtendedForecast = () => {
     return !loading ? (
         <Box
             sx={{
-                bgcolor: "primary.main",
-                p: 4,
-                mt: 4,
+                bgcolor: "secondary.main",
+                p: 3,
+                mt: 3,
                 borderRadius: 3,
             }}>
-            <Typography variant='h4' color='secondary'>
+            <Typography variant='h4' color='title.main'>
                 extended forecast
             </Typography>
-            <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+            <Box sx={{ display: "flex", justifyContent: "space-around",overflowY: "auto"  }}>
                 {setWeather.forecast.forecastday.map((data , index) => (
                     <Day
                         key={index

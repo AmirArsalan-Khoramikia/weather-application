@@ -53,20 +53,15 @@ function App() {
         <ThemeProvider theme={theme}>
             <Box
                 sx={{
-                    width: "100vw",
+                    width:"100vw",
                     height: "100vh",
                     bgcolor: "primary.dark",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                 }}>
-                <Box
-                    sx={{
-                        width: "50vw",
-                        m: "0 auto",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        height: "100vh",
-                    }}>
-                    <Box>
+                    <Box
+                    sx={{width:{xs:"50vw" , m:"60vw" , s:"80vw"}}}>
                         <weatherContext.Provider
                             value={{
                                 setWeather,
@@ -79,7 +74,6 @@ function App() {
                             <ExtendedForecast />
                         </weatherContext.Provider>
                     </Box>
-                </Box>
             </Box>
         </ThemeProvider>
     );

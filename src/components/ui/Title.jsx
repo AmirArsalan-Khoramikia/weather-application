@@ -23,7 +23,7 @@ const Title = (handelChangeTheme) => {
                 alignItems: "center",
             }}
         >
-            <Typography variant="h4" sx={{ color: "secondary.main" }}>
+            <Typography variant="h4" sx={{ color: "title.main" }}>
                 Weather App
             </Typography>
 
@@ -36,10 +36,9 @@ const Title = (handelChangeTheme) => {
                     onChange={handelChangeTheme.handelChangeTheme}
                     sx={{ mr: 1 }}
                     labelPlacement="start"
-                    control={<Switch defaultChecked />}
-                    label="Theme:"
+                    control={<Switch defaultChecked color="secondary"/>}
                 />
-                <GitHubIcon sx={{ fontSize: 45, color: "secondary.main" }} />
+                <GitHubIcon sx={{ fontSize: 45, color: "title.main" }} />
             </Box>
         </Box>
     );

@@ -9,8 +9,11 @@ const lightTheme = createTheme({
 
 const darkTheme = createTheme({
     palette: {
-        primary: { main: "#16325B" },
-        secondary: { main: "#227B94" },
+        primary: { main: "#021526" , contrastText:"#E2E2B6" },
+        secondary: { main: "#03346E" },
+        title: { main: "#6EACDA" },
+        text: { main: "#E2E2B6" },
+        icon: { main: "#BBE1FA" },
     },
 });
 

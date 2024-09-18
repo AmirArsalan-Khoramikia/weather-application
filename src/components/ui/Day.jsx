@@ -9,13 +9,13 @@ const Day = ({ Title, WetherCondition, MinTemp , MaxTemp ,  WetherImage }) => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                p: 2,
+                p: 1,
                 mt: 2,
                 gap: 0.5,
             }}>
             <Typography
                 variant='hp'
-                color='secondary'
+                color='text.main'
                 sx={{ fontWeight: "bold" }}>
                 {Title}
             </Typography>
@@ -31,15 +31,15 @@ const Day = ({ Title, WetherCondition, MinTemp , MaxTemp ,  WetherImage }) => {
             />
             <Typography
                 variant='hp'
-                color='secondary'
+                color='icon.main'
                 sx={{ fontWeight: "bold" }}>
                 {WetherCondition}
             </Typography>
             <Typography
                 variant='hp'
-                color='secondary'
+                color='text.main'
                 sx={{ fontWeight: "bold" }}>
-                {MinTemp + " | " + MaxTemp}
+                {MinTemp + "° | " + MaxTemp + "°"}
             </Typography>
         </Box>
     );
