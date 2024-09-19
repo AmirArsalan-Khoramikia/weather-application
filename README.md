@@ -71,8 +71,8 @@ yarn build
 
 ## 🖼 Application Preview
 
-![App Preview](./preview img/preview img-weathe app-dark.png)  
-![App Preview](./preview img/preview img-weathe app-light.png)  
+![App Preview](preview img/preview img-weathe app-dark.png)  
+![App Preview](preview img/preview img-weathe app-light.png)  
 _A preview of the Weather Application interface._
 
 ## 📂 Project Structure
