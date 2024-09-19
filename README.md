@@ -71,8 +71,8 @@ yarn build
 
 ## 🖼 Application Preview
 
-![App Preview](preview img/preview img-weathe app-dark.png)  
-![App Preview](preview img/preview img-weathe app-light.png)  
+<img src="(preview img/preview img-weathe app-dark.png">
+<img src="(preview img/preview img-weathe app-light.png">  
 _A preview of the Weather Application interface._
 
 ## 📂 Project Structure
@@ -112,4 +112,4 @@ This enhanced `README.md` offers a more comprehensive overview of the app, inclu
 ⚠️If you see a problem with the program, use vpn
 thank you
 
-AmirArsalan Khoramikia 24/9/19
+AmirArsalan Khoramikia 2024/9/19
