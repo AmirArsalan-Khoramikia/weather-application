@@ -1,6 +1,3 @@
-Here's an expanded and more detailed version of your `README.md`:
-
----
 
 # Weather Application
 
@@ -48,17 +45,9 @@ npm install
 yarn install
 ```
 
-### Step 3: Create `.env` File
-
-Create a `.env` file in the root of the project and add your API key for the weather service (e.g., OpenWeatherMap).
-
-```bash
-REACT_APP_WEATHER_API_KEY=your_api_key_here
-```
-
 > You can get a free API key from [OpenWeatherMap](https://openweathermap.org/appid).
 
-### Step 4: Start the development server
+### Step 3: Start the development server
 
 To start the development server and begin working on the application, use:
 
@@ -70,7 +59,7 @@ yarn dev
 
 The app will be running locally at `http://localhost:3000`.
 
-### Step 5: Build for production
+### Step 4: Build for production
 
 When you're ready to deploy, you can build the app for production:
 
@@ -79,8 +68,6 @@ npm run build
 # OR
 yarn build
 ```
-
-This will create an optimized production build in the `dist` folder.
 
 ## 🖼 Application Preview
 
