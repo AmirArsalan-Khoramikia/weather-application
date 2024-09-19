@@ -1,4 +1,4 @@
-
+![preview img-weathe app-light png](https://github.com/user-attachments/assets/d55108c9-b394-484e-b758-c9e59b2849a7)
 # Weather Application
 
 This is a weather application built using **Vite.js**, **React**, and **Material UI**, which allows users to check the weather in different cities by fetching real-time data from a public weather API. The application is designed to be lightweight, fast, and responsive, offering a seamless experience across all devices.
@@ -71,8 +71,8 @@ yarn build
 
 ## 🖼 Application Preview
 
-<img src="(preview img/preview img-weathe app-dark.png">
-<img src="(preview img/preview img-weathe app-light.png">  
+![preview img-weathe app-dark](https://github.com/user-attachments/assets/5b86e6a7-b612-402a-87ca-ec694f9c5982)
+![preview img-weathe app-light png](https://github.com/user-attachments/assets/22ded295-bc13-4242-8d58-a9e6e56495f3)  
 _A preview of the Weather Application interface._
 
 ## 📂 Project Structure
