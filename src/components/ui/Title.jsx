@@ -1,20 +1,11 @@
-import React, { useContext } from "react";
-import { Box, Typography } from "@mui/material";
+import React from "react";
+import { Box, Button, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import { weatherContext } from "../../App";
 
 const Title = (handelChangeTheme) => {
-    const { setWeather } = useContext(weatherContext);
-
-    // const time = () => {
-    //     setInterval(() => {
-    //         return setWeather.location.localtime;
-    //     }, 1000);
-    // };
-
     return (
         <Box
             sx={{
@@ -23,22 +14,27 @@ const Title = (handelChangeTheme) => {
                 alignItems: "center",
             }}
         >
-            <Typography variant="h4" sx={{ color: "title.main" }}>
+            <Typography variant="h4" sx={{ color: "secondary.main" }}>
                 Weather App
             </Typography>
-
-            {/* <Typography variant="p" color="secondary">
-                {time}
-            </Typography> */}
 
             <Box sx={{ display: "flex", alignItems: "center" }}>
                 <FormControlLabel
                     onChange={handelChangeTheme.handelChangeTheme}
                     sx={{ mr: 1 }}
                     labelPlacement="start"
-                    control={<Switch defaultChecked color="secondary"/>}
+                    control={<Switch defaultChecked color="secondary" />}
                 />
-                <GitHubIcon sx={{ fontSize: 45, color: "title.main" }} />
+
+                <Button
+                    component="a"
+                    href="https://github.com/AmirArsalan-Khoramikia/weather-application"
+                    target="_blank"
+                >
+                    <GitHubIcon
+                        sx={{ fontSize: 45, color: "secondary.main" }}
+                    />
+                </Button>
             </Box>
         </Box>
     );

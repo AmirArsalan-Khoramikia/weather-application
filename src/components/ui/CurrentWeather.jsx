@@ -6,6 +6,7 @@ import CompressIcon from "@mui/icons-material/Compress";
 import { Box, Typography } from "@mui/material";
 
 import { weatherContext } from "../../App";
+import { BeatLoader } from "react-spinners";
 
 const CurrentWeather = () => {
     const { setWeather, loading } = useContext(weatherContext);
@@ -13,13 +14,14 @@ const CurrentWeather = () => {
     return (
         <Box
             sx={{
-                bgcolor: "secondary.main",
+                bgcolor: "secondary.dark",
                 p: 3,
                 mt: 3,
                 borderRadius: 3,
-            }}>
+            }}
+        >
             <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Typography variant='h4' color='title.main'>
+                <Typography variant="h4" color="secondary.main">
                     Current Weather
                 </Typography>
             </Box>
@@ -28,12 +30,14 @@ const CurrentWeather = () => {
                     sx={{
                         display: "flex",
                         justifyContent: "space-around",
-                    }}>
+                    }}
+                >
                     <Box sx={{ display: "flex", flexDirection: "column" }}>
                         <Typography
-                            variant='p'
-                            color='text.main'
-                            sx={{ mb: 2, mt: 2 }}>
+                            variant="p"
+                            color="secondary.contrastText"
+                            sx={{ mb: 2, mt: 2 }}
+                        >
                             {setWeather.location.name +
                                 " - " +
                                 setWeather.location.region +
@@ -42,9 +46,9 @@ const CurrentWeather = () => {
                         </Typography>
                         <Box sx={{ display: "flex" }}>
                             <Box
-                                component='img'
+                                component="img"
                                 src={setWeather.current.condition.icon}
-                                alt='weather-icon'
+                                alt="weather-icon"
                                 sx={{
                                     width: "100px",
                                     height: "100px",
@@ -52,13 +56,14 @@ const CurrentWeather = () => {
                                 }}
                             />
                             <Typography
-                                variant='p'
-                                color="icon.main"
-                                sx={{ fontSize: 80 }}>
+                                variant="p"
+                                color="secondary.main"
+                                sx={{ fontSize: 80 }}
+                            >
                                 {setWeather.current.temp_c}°
                             </Typography>
                         </Box>
-                        <Typography variant='p' color='text.main'>
+                        <Typography variant="p" color="secondary.contrastText">
                             {setWeather.current.condition.text}
                         </Typography>
                     </Box>
@@ -66,15 +71,21 @@ const CurrentWeather = () => {
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            gap: 5,
-                        }}>
+                            display: { xs: "none", sm: "block" },
+                        }}
+                    >
                         <Box
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",
                                 gap: 1,
-                            }}>
-                            <Typography variant='h6' color='text.main'>
+                                mb: 5,
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                color="secondary.contrastText"
+                            >
                                 Feels Like {setWeather.current.feelslike_c}°
                             </Typography>
                         </Box>
@@ -83,33 +94,48 @@ const CurrentWeather = () => {
                                 display: "flex",
                                 flexDirection: "column",
                                 gap: 1,
-                            }}>
+                            }}
+                        >
                             <Typography
-                                variant='p'
-                                color='text.main'
-                                sx={{ display: "flex" }}>
-                                <WaterDropIcon sx={{color:"icon.main" , mr:2}}/>
+                                variant="p"
+                                color="secondary.contrastText"
+                                sx={{ display: "flex" }}
+                            >
+                                <WaterDropIcon
+                                    sx={{ color: "secondary.main", mr: 2 }}
+                                />
                                 Humidity: {setWeather.current.humidity}%
                             </Typography>
                             <Typography
-                                variant='p'
-                                color='text.main'
-                                sx={{ display: "flex" }}>
-                                <AirIcon sx={{color:"icon.main" , mr:2}} />
+                                variant="p"
+                                color="secondary.contrastText"
+                                sx={{ display: "flex" }}
+                            >
+                                <AirIcon
+                                    sx={{ color: "secondary.main", mr: 2 }}
+                                />
                                 {setWeather.current.gust_kph} kph
                             </Typography>
                             <Typography
-                                variant='p'
-                                color='text.main'
-                                sx={{ display: "flex" }}>
-                                <CompressIcon sx={{color:"icon.main" , mr:2}} />
+                                variant="p"
+                                color="secondary.contrastText"
+                                sx={{ display: "flex" }}
+                            >
+                                <CompressIcon
+                                    sx={{ color: "secondary.main", mr: 2 }}
+                                />
                                 {setWeather.current.pressure_mb} hpa
                             </Typography>
                         </Box>
                     </Box>
                 </Box>
             ) : (
-                <Box> Loading ... </Box>
+                <Box sx={{textAlign:"center" }}>
+                    <BeatLoader 
+                    color="#6EACDA"
+                    size="20"
+                    />
+                </Box>
             )}
         </Box>
     );

@@ -9,23 +9,17 @@ const ExtendedForecast = () => {
     if (!loading) {
         console.log(setWeather);
         console.log(setWeather.forecast.forecastday);
-        // console.log(setWeather.forecast.forecastday[0]);
-        // console.log(setWeather.forecast.forecastday[0].date);
-        // console.log(setWeather.forecast.forecastday[0].day.maxtemp_c);
-        // console.log(setWeather.forecast.forecastday[0].day.mintemp_c);
-        // console.log(setWeather.forecast.forecastday[0].day.condition.text);
-        // console.log(setWeather.forecast.forecastday[0].day.condition.icon);
     }
 
     return !loading ? (
         <Box
             sx={{
-                bgcolor: "secondary.main",
+                bgcolor: "secondary.dark",
                 p: 3,
                 mt: 3,
                 borderRadius: 3,
             }}>
-            <Typography variant='h4' color='title.main'>
+            <Typography variant='h4' color='secondary.main'>
                 extended forecast
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "space-around",overflowY: "auto"  }}>
@@ -44,20 +38,8 @@ const ExtendedForecast = () => {
             </Box>
         </Box>
     ) : (
-        <Box>sdsf</Box>
+        <Box></Box>
     );
 };
 
 export default ExtendedForecast;
-
-
-
-
-
-
-//     console.log(data);
-//     console.log(data.date);
-//     console.log(data.day.maxtemp_c);
-//     console.log(data.day.mintemp_c);
-//     console.log(data.day.condition.text);
-//     console.log(data.day.condition.icon);

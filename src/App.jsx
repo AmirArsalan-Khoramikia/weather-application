@@ -19,16 +19,25 @@ export const weatherContext = createContext();
 function App() {
     const [setWeather, setSetWeather] = useState();
     const [loading, setLoading] = useState(true);
+    const [city, setCity] = useState("mashhad");
+
+    const citySearcg =(data)=>{
+        setCity(data)
+    }
 
     // --------------------GETWEATHER----------------------
     useEffect(() => {
         getWeather();
     }, []);
 
+    useEffect(() => {
+        getWeather();
+    }, [city]);
+
     const getWeather = async () => {
         try {
             const response = await axios.get(
-                "http://api.weatherapi.com/v1/forecast.json?key=746cacc8eef5448c9bc124132240909&q=mashhad&days=7&aqi=no&alerts=no"
+                `http://api.weatherapi.com/v1/forecast.json?key=746cacc8eef5448c9bc124132240909&q=${city}&days=7&aqi=no&alerts=no`
             );
             setSetWeather(response.data);
             setLoading(false);
@@ -53,27 +62,43 @@ function App() {
         <ThemeProvider theme={theme}>
             <Box
                 sx={{
-                    width:"100vw",
-                    height: "100vh",
                     bgcolor: "primary.dark",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}>
+                    overflowX:"auto"
+                }}
+                >
+                <Box
+                    sx={{
+                        height: "100vh",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                    >
                     <Box
-                    sx={{width:{xs:"50vw" , m:"60vw" , s:"80vw"}}}>
+                        sx={{
+                            scale: { xs: "60%", sm: "70%", md: "80%", lg: "90%"  },
+                            width: {
+                                xs: "95vw",
+                                sm: "80vw",
+                                md: "70vw",
+                                lg: "60vw",
+                            },
+                        }}
+                    >
                         <weatherContext.Provider
                             value={{
                                 setWeather,
                                 setSetWeather,
                                 loading,
-                            }}>
+                            }}
+                        >
                             <Title handelChangeTheme={handelChangeTheme} />
-                            <Search />
+                            <Search citySearcg={citySearcg}/>
                             <CurrentWeather />
                             <ExtendedForecast />
                         </weatherContext.Provider>
                     </Box>
+                </Box>
             </Box>
         </ThemeProvider>
     );

@@ -15,7 +15,7 @@ const Day = ({ Title, WetherCondition, MinTemp , MaxTemp ,  WetherImage }) => {
             }}>
             <Typography
                 variant='hp'
-                color='text.main'
+                color='secondary.contrastText'
                 sx={{ fontWeight: "bold" }}>
                 {Title}
             </Typography>
@@ -31,13 +31,13 @@ const Day = ({ Title, WetherCondition, MinTemp , MaxTemp ,  WetherImage }) => {
             />
             <Typography
                 variant='hp'
-                color='icon.main'
+                color='secondary.main'
                 sx={{ fontWeight: "bold" }}>
                 {WetherCondition}
             </Typography>
             <Typography
                 variant='hp'
-                color='text.main'
+                color='secondary.contrastText'
                 sx={{ fontWeight: "bold" }}>
                 {MinTemp + "° | " + MaxTemp + "°"}
             </Typography>
