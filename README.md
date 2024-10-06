@@ -1,4 +1,3 @@
-
 # Weather Application
 
 This is a weather application built using **Vite.js**, **React**, and **Material UI**, which allows users to check the weather in different cities by fetching real-time data from a public weather API. The application is designed to be lightweight, fast, and responsive, offering a seamless experience across all devices.
@@ -71,13 +70,15 @@ yarn build
 
 ## 🖼 Application Preview
 
-![App Preview](https://via.placeholder.com/1000x500)  
+![preview img-weathe app-dark](https://github.com/user-attachments/assets/5b86e6a7-b612-402a-87ca-ec694f9c5982)
+![preview img-weathe app-light png](https://github.com/user-attachments/assets/22ded295-bc13-4242-8d58-a9e6e56495f3)  
 _A preview of the Weather Application interface._
 
 ## 📂 Project Structure
 
 ```plaintext
 weather-app/
+├── preview img/
 ├── public/               # Public assets (images, etc.)
 ├── src/
 │   ├── components/       # Reusable React components
@@ -92,27 +93,11 @@ weather-app/
 └── README.md             # Project documentation
 ```
 
-## 🧪 Testing
-
-While basic functionality is tested during development, setting up automated tests with a tool like **Jest** or **React Testing Library** is recommended for production-level projects.
-
-### Running Tests
-
-```bash
-npm run test
-# OR
-yarn test
-```
-
 ## 🌍 Deployment
 
 Once you've built the app for production, you can deploy the `dist` folder to any static site hosting service, such as **Netlify**, **Vercel**, or **GitHub Pages**.
 
 For Vercel deployment, simply connect the repository to your Vercel account, and it will automatically deploy your app every time you push a change to the main branch.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙌 Acknowledgments
 
@@ -122,3 +107,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 This enhanced `README.md` offers a more comprehensive overview of the app, including its features, setup instructions, project structure, and how to contribute. Let me know if you need further adjustments!
+
+⚠️If you see a problem with the program, use vpn
+thank you
+
+AmirArsalan Khoramikia 2024/9/19
