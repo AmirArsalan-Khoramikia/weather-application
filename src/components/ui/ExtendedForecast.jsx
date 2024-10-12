@@ -6,10 +6,6 @@ import Day from "./Day";
 
 const ExtendedForecast = () => {
     const { setWeather, loading } = useContext(weatherContext);
-    if (!loading) {
-        console.log(setWeather);
-        console.log(setWeather.forecast.forecastday);
-    }
 
     return !loading ? (
         <Box
@@ -25,9 +21,7 @@ const ExtendedForecast = () => {
             <Box sx={{ display: "flex", justifyContent: "space-around",overflowY: "auto"  }}>
                 {setWeather.forecast.forecastday.map((data , index) => (
                     <Day
-                        key={index
-
-                        }
+                        key={index}
                         Title={data.date}
                         WetherCondition={data.day.condition.text}
                         MinTemp={data.day.mintemp_c}

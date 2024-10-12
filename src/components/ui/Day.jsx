@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 
 const Day = ({ Title, WetherCondition, MinTemp , MaxTemp ,  WetherImage }) => {
-    console.log(WetherImage);
     return (
         <Box
             sx={{
